@@ -45,15 +45,17 @@ namespace OrderSample.Api
                     cfg.ConfigureEndpoints(context);
                 });
 
-                //bool useManagedIdentity = Convert.ToBoolean(Configuration["useManagedIdentity"]);
 
+                //comment the RabbitMq above and uncomment the below to use Azure Service Bus
+
+                //bool useManagedIdentity = Convert.ToBoolean(Configuration["useManagedIdentity"]);
                 //x.UsingAzureServiceBus((context, cfg) =>
                 //{
                 //    cfg.UseHealthCheck(context);
 
                 //    if (useManagedIdentity)
                 //    {
-                //        cfg.Host(new Uri("sb://mtapp20200814.servicebus.windows.net/"), hostCfg =>
+                //        cfg.Host(new Uri("sb://[your_sb_namespace].servicebus.windows.net/"), hostCfg =>
                 //        {
                 //            var tokenProvider = TokenProvider.CreateManagedIdentityTokenProvider();
                 //            hostCfg.TokenProvider = tokenProvider;
@@ -61,7 +63,7 @@ namespace OrderSample.Api
                 //    }
                 //    else
                 //    {
-                //        string endpoint = "Endpoint=sb://mtapp20200814.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=6udKGwjRl9UbaVYTkMWJwz9qVDNOHPliekj1aP7bNNQ=";
+                //        string endpoint = ""; //enter your sb connection string
                 //        cfg.Host(endpoint);
                 //    }
 
